@@ -1,0 +1,29 @@
+// Color Guessing Game
+import java.util.Random;
+import java.util.Scanner;
+
+public class ColorGuessingGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        String[] colors = {"Red", "Blue", "Green", "Yellow", "Purple", "Orange", "Pink", "Black", "White"};
+        String chosenColor = colors[random.nextInt(colors.length)];
+        String guess;
+        
+        System.out.println("Welcome to the Color Guessing Game!");
+        System.out.println("I have chosen a color. Try to guess it!");
+        
+        while (true) {
+            System.out.print("Enter your color guess: ");
+            guess = scanner.nextLine();
+            
+            if (guess.equalsIgnoreCase(chosenColor)) {
+                System.out.println("Congratulations! You guessed the correct color.");
+                break;
+            } else {
+                System.out.println("Wrong guess! Try again.");
+            }
+        }
+        scanner.close();
+    }
+}
